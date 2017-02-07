@@ -25,12 +25,12 @@ INSTALL_CBLOG_PACKAGE () {
   
   # Create a link to www/ folder
   if [[ -L /var/www/cblog ]]; then
-    rm /var/www/cblog
+    sudo rm /var/www/cblog
   fi
-  ln -s $SRC/output /var/www/cblog
+  sudo ln -s $SRC/output /var/www/cblog
 
   # Change owner
-  chown www-data:www-data -R $SRC/output/.
+  sudo chown www-data:www-data -R $SRC/output/.
 }
 
 INSTALL_NGINX_CONFIGURATION () {
