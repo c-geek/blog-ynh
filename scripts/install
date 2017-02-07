@@ -17,3 +17,4 @@ sudo yunohost app checkurl "${domain}${path}" -a "$app" \
     || ynh_die "Path not available: ${domain}${path}"
 
 INSTALL_CBLOG_PACKAGE
+INSTALL_NGINX_CONFIGURATION
