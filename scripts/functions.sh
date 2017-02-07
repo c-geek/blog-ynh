@@ -35,9 +35,7 @@ INSTALL_CBLOG_PACKAGE () {
 
 INSTALL_NGINX_CONFIGURATION () {
   # Configure Nginx
-  here=`pwd`
-  echo $here
-  nginx_conf="../conf/nginx.conf"
+  nginx_conf="$YNH_PACKAGE_SRC/conf/nginx.conf"
   sudo cp $nginx_conf /etc/nginx/conf.d/$domain.d/$app.conf
   sudo nginx -t && sudo service nginx reload
 }
