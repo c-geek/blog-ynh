@@ -6,6 +6,7 @@ set -eu
 # Retrieve arguments
 app=$YNH_APP_INSTANCE_NAME
 domain=$YNH_APP_ARG_DOMAIN
+path=$YNH_APP_ARG_PATH
 
 # Source app helpers and functions
 source /usr/share/yunohost/helpers
