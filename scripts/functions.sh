@@ -11,7 +11,7 @@ INSTALL_CBLOG_PACKAGE () {
   source bin/activate
   
   # Clone the cblog sources
-  git clone https://github.com/c-geek/blog && cd blog
+  git clone https://github.com/c-geek/blog cblog && cd cblog
   SRC=`pwd`
   
   # Install pelican
