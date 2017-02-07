@@ -1,0 +1,46 @@
+{
+    "name": "cblog",
+    "id": "cblog",
+    "packaging_format": 1,
+    "description": {
+        "en": "The blog of cgeek, the cblog.",
+        "fr": "Le blog de cgeek, le cblog."
+    },
+    "url": "https://blog.cgeek.fr",
+    "license": "free",
+    "maintainer": {
+        "name": "cgeek",
+        "email": "cem.moreau@gmail.com",
+        "url": "https://cgeek.fr"
+    },
+    "requirements": {
+        "yunohost": ">> 2.4.0"
+    },
+    "multi_instance": false,
+    "services": [
+        "nginx"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Dedicated domain name on which no application must be installed. Install will be done on root path.",
+                    "fr": "Nom de domaine dédié sur lequel aucune application ne doit être installée. L’installation sera faite à la racine."
+                },
+                "example": "cblog.domain.tld"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "URL path on which install the cblog.",
+                    "fr": "Chemin d'URL sur lequel ajouter le cblog."
+                },
+                "example": "/",
+                "default": "/"
+            }
+        ]
+    }
+}
