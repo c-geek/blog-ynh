@@ -9,6 +9,7 @@ domain=$YNH_APP_ARG_DOMAIN
 
 # Source app helpers and functions
 source /usr/share/yunohost/helpers
+source functions.sh
 
 # Check domain/path availability
 sudo yunohost app checkurl "${domain}${path}" -a "$app" \
