@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Source app helpers
+source /usr/share/yunohost/helpers
+
+app=$YNH_APP_INSTANCE_NAME
+domain=$(ynh_app_setting_get $app domain)
+
+sudo rm -rf /root/virtualenvs/cblog
+sudo rm -rf /var/www/cblog
+
+# Remove proxy_pass
+sudo rm -f /etc/nginx/conf.d/$domain.d/$app.conf
+sudo service nginx reload
