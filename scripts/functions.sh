@@ -32,3 +32,10 @@ INSTALL_CBLOG_PACKAGE () {
   # Change owner
   chown www-data:www-data -R $SRC/output/.
 }
+
+INSTALL_NGINX_CONFIGURATION () {
+  # Configure Nginx
+  nginx_conf="../conf/nginx.conf"
+  sudo cp $nginx_conf /etc/nginx/conf.d/$domain.d/$app.conf
+  sudo nginx -t && sudo service nginx reload
+}
