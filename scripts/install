@@ -20,3 +20,5 @@ YNH_PACKAGE_SRC=`pwd`
 
 INSTALL_CBLOG_PACKAGE
 INSTALL_NGINX_CONFIGURATION
+
+ynh_app_setting_set "$app" unprotected_uris "/"
