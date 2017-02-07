@@ -21,7 +21,7 @@ INSTALL_CBLOG_PACKAGE () {
   pelican-themes --install medius/
   
   # Generate the blog
-  sudo sed -i "s@blog\.cgeek\.fr@$domain@g" publishconf.py
+  sudo sed -i "s@http://blog\.cgeek\.fr@https://$domain@g" publishconf.py
   pelican -s publishconf.py
   
   # Create a link to www/ folder
