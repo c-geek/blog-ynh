@@ -6,7 +6,7 @@ source /usr/share/yunohost/helpers
 app=$YNH_APP_INSTANCE_NAME
 domain=$(ynh_app_setting_get $app domain)
 
-sudo rm -rf /root/virtualenvs/cblog
+sudo rm -rf ~/virtualenvs/cblog
 sudo rm -rf /var/www/cblog
 
 # Remove proxy_pass
