@@ -6,7 +6,9 @@ INSTALL_CBLOG_PACKAGE () {
   sudo apt-get install -y python-pip python-virtualenv python-dev libldap2-dev libsasl2-dev libssl-dev
   
   # Create the virtualenv
-  virtualenv ~/virtualenvs/cblog && cd ~/virtualenvs/cblog && source bin/activate
+  virtualenv ~/virtualenvs/cblog
+  cd ~/virtualenvs/cblog
+  source bin/activate
   
   # Clone the cblog sources
   git clone https://github.com/c-geek/blog && cd blog
@@ -22,5 +24,11 @@ INSTALL_CBLOG_PACKAGE () {
   pelican
   
   # Create a link to www/ folder
-  ln -s $SRC /var/www/cblog
+  if [[ -L /var/www/cblog ]]; then
+    rm /var/www/cblog
+  fi
+  ln -s $SRC/output /var/www/cblog
+
+  # Change owner
+  chown www-data:www-data -R $SRC/output/.
 }
